@@ -30,10 +30,11 @@ def build_mail(toaddr, items, row):
     ''' Build the email address, items and row content.'''
     from email.mime.text import MIMEText
     crnl = '\r\n'
-    content = '薪酬明细：' + crnl
+    content = '薪酬明细（测试）：' + crnl
     for i in range(len(items)):
         content = content + items[i].encode('utf-8') + ': ' + \
         unicode(row[i]).encode('utf-8') + crnl
+    content = content + '如有问题，请回复此邮件，或致电财务室徐小慧咨询。'
     msg = MIMEText(content)
     msg['Subject'] = '薪酬单'
     msg['From'] = u'花都区成人教育培训中心财务室'
@@ -64,10 +65,16 @@ def main():
     for i in range(i + 2, sh.nrows):
         try:
             address = addresses[sh.row_values(i)[0]].encode()
-            build_mail(address, items, sh.row_values(i))
+            if address=='':
+                logmsg='account ' + e.args[0].encode() + \
+                       " hasn't an address."
+                log.append(logmsg)
+            else:
+                build_mail(address, items, sh.row_values(i))
         except KeyError, e:
-            log.append('account ' + e.args[0].encode() + \
-                       " doesn't map to an address.")
+            logmsg='account ' + e.args[0].encode() + \
+                       " doesn't map to an address."
+            log.append(logmsg)
     sendlog('\r\n'.join(log))
 
 def sendlog(msg):
