@@ -13,8 +13,8 @@ def sendmail(toaddr, msg):
     import smtplib
     smtp=smtplib.SMTP()
     smtp.connect('smtp.163.com:25')
-    smtp.login('zhao_weien', 'wayne@78')
-    smtp.sendmail('zhao_weien@163.com', toaddr, msg)
+    smtp.login('cat1599', '790811')
+    smtp.sendmail('cat1599@163.com', toaddr, msg)
     smtp.quit()
 
 def retrieve_to_address():
@@ -36,7 +36,7 @@ def build_mail(toaddr, items, row):
         unicode(row[i]).encode('utf-8') + crnl
     content = content + '如有问题，请回复此邮件，或致电财务室徐小慧咨询。'
     msg = MIMEText(content)
-    msg['Subject'] = '薪酬单'
+    msg['Subject'] = '薪酬单（测试）'
     msg['From'] = u'花都区成人教育培训中心财务室'
     msg['To'] = toaddr
     msg.set_charset('utf-8')
@@ -66,11 +66,13 @@ def main():
         try:
             address = addresses[sh.row_values(i)[0]].encode()
             if address=='':
-                logmsg='account ' + e.args[0].encode() + \
+                logmsg='account ' + sh.row_values(i)[0] + \
                        " hasn't an address."
                 log.append(logmsg)
             else:
                 build_mail(address, items, sh.row_values(i))
+                print '账号'+sh.row_values(i)[0].encode('utf-8')+\
+                    '的薪酬单已发送到' + address.encode('utf-8')
         except KeyError, e:
             logmsg='account ' + e.args[0].encode() + \
                        " doesn't map to an address."
