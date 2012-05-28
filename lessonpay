@@ -1,0 +1,17 @@
+excel的当前工作表保存了全部老师的课酬数据，每行一位老师，以银行账号为唯
+一条件。有些老师还登记了电子邮箱地址。需要一个程序，给每位登记了邮箱地
+址的老师发送邮件，详细列出他的课酬情况。每次发50封邮件，发过的记录不会
+重发。如果发送出错，就在下次重发。
+
+提示：有一行保存了标题名称，标题行下一行是合计行，再以下就是每位老师的数据。
+
+This excel worksheet saves the lesson remuneration data of all
+teachers, each line of a teacher, with a bank account as the only
+condition. Some teachers also registered e-mail address. Need a
+program to send a message to each teachers who's registered e-mail
+address, which lists the detail of it's lesson remuneration. It will
+send 50 messages every time, which will be not re-sent. If there is
+any error, it will be done next time.
+
+Hint: There is a line that keeps the title, and the other line row is
+the summary line, and then the data of each teacher.
