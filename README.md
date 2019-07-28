@@ -13,37 +13,3 @@ GUI。因为python很火，特别以后向AI方向发展一定避不开它。看
 能设置文件保存路径，并按年、月规则在Treeview里显示数据入口。然后在类
 table的widget里显示具体数据。
 
-接下来有两项工作，一是了解老婆的工作规则，譬如Excel公式；二是学习
-tkinter相关知识。
-
-## Pandas ##
-
-Pandas用于读写Excel。
-
-## Tkinter ##
-
-python 2.x和3.x的tkinter不兼容。老婆单位用的电脑是xp，只能安装3.4以下
-的版本，加上Mac也对python3兼容不好，决定用python2开发。
-	
-UI设计决定是左边一个Treeview，右边一个table。但tkinter没有自带但table
-widget。一是用自定义widget简单实现，二是安装tktable扩展。都快速尝试一
-下吧。
-	
-### 自定义widget ###
-
-最简单都就是用message widget显示多行文本.
-
-### tktable ###
-
-在xp虚拟机里安装
-
-## 工作规则 ##
-
- 
-## Emacs ##
-
-Emacs自带python-mode。C-c C-c可以将运行buffer的代码，dedicated选n就不
-会有python编译器的buffer。
-
-用git管理文件版本。C-x v v是check in。在comment编辑里，C-c C-c就可以结
-束编辑。
