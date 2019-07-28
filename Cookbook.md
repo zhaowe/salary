@@ -19,6 +19,10 @@ table的widget里显示具体数据。
 Emacs。Emacs也越用越顺手，基本上可以在Emacs里完成所有操作。估计逐渐连
 xp的虚拟机都可以很少打开。
 
+## Github ##
+
+打算暂停本项目，将代码上传到GitHub保存。
+
 ## TODO ##
 
 - 公共列表变量保存workbook对象
